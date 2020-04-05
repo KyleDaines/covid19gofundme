@@ -125,11 +125,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 REST_FRAMEWORK = { 'DEFAULT_PERMISSION_CLASSES': [ 'rest_framework.permissions.AllowAny' ] }
 
 
 STRIPE_KEY = 'pk_test_R3XusGPnU17XkGw2fjUSZ7RK007jAFWpR3'
 STRIPE_SECRET = 'sk_test_XZhYaWSbQeikV1r5Ogf0KzKF00S7LK1mlX'
+
 import stripe
+
 stripe.api_key = STRIPE_SECRET
