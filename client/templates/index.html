@@ -103,7 +103,8 @@
       }
       input[type=button], input[type=submit], input[type=reset] {
         background-color: #4CAF50;
-        border: none;
+        border: 2px solid rgb(17, 18, 109);
+        border-radius: 20px;
         color: white;
         padding: 16px 32px;
         text-decoration: none;
@@ -150,19 +151,19 @@
     <label>Campaign has beneficiary?    <input type="checkbox" name="has_beneficiary"></label>
     <label>Campaign visible in search?    <input type="checkbox" name="visible_in_search"></label>
     <label>Launch Date: (xx-xx-xxxx)</label>
-    <input type="text" name="launch_date">
-    <label>Country: (country code)</label>
-    <input type="text" name="location_country">
+    <input required type="date" name="launch_date">
+    <label>Country: (2-character country code)</label>
+    <input required pattern="[A-Z]{2}" type="text" name="location_country">
     <label>Zipcode: (5 digits)</label>
-    <input type="text" name="location_zip">
+    <input required min="1" max="99999" type="number" name="location_zip">
     <label>Is campaign a charity?    <input type="checkbox" name="is_charity"></label>
     <label>Charity has npo ID?    <input type="checkbox" name="charity_valid"></label>
     <label>Goal: (in dollars)</label>
-    <input type="text" name="goal_cbrt">
+    <input required type="number" name="goal_cbrt">
     <label>Title:</label>
-    <input type="text" name="title">
+    <input required type="text" name="title">
     <label>Description:</label>
-    <input type="text" name="description">
+    <input required type="text" name="description">
     <div style="text-align: center">
     <input type="submit" name="Submit">
     </div>

@@ -2,7 +2,7 @@
 <html>
 <head>
     <style>
-        div {
+        #div1 {
             max-width: 900px;
             margin: auto;
             padding: 10px 20px;
@@ -12,12 +12,37 @@
             height: auto;  
             text-align: center;
         }
+        .button {
+            background-color: #4CAF50;
+            border: 2px solid rgb(17, 18, 109);
+            border-radius: 20px;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        #div2 {
+            max-width: 900px;
+            margin: auto;
+            padding: 10px 20px;
+            height: auto;  
+            text-align: center;
+        }
     </style>
 
 </head>
 <body>
-    <div>
+    <div id=div1>
         <h1> Your campaign is predicted to have {{result2}} donors, with an average of ${{result}} per donation.</h1>
+    </div>
+    <br/><br/><br/><br/>
+    <div id=div2>
+        <a href="https://covid19gofundme.herokuapp.com/index/"><button class="button">Back to Calculator</button></a>
+        <a href="https://covid19gofundme.herokuapp.com/"><button class="button">Back to Homepage</button></a>
     </div>
 <!-- the above uses the django template engine to display the results var -->
 </body>
