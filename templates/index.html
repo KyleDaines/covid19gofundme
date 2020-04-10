@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+</head>
+<body>
+<h1> this is the input view </h1>
+<h1> </h1>
+<!-- action should be the url path to the view that renders the template displaying the results -->
+<form action="/results/" method="POST" >
+{% csrf_token %}
+    auto_fb_post_mode:<br>
+    <input type="text" name="auto_fb_post_mode"><br>
+    category_id:<br>
+    <input type="text" name="category_id"><br>
+    has_beneficiary:<br>
+    <input type="text" name="has_beneficiary"><br>
+    visible_in_search:<br>
+    <input type="text" name="visible_in_search"><br>
+    launch_date:<br>
+    <input type="text" name="launch_date"><br>
+    location_country:<br>
+    <input type="text" name="location_country"><br>
+    location_zip:<br>
+    <input type="text" name="location_zip"><br>
+    is_charity:<br>
+    <input type="text" name="is_charity"><br>
+    charity_valid:<br>
+    <input type="text" name="charity_valid"><br>
+    goal_cbrt:<br>
+    <input type="text" name="goal_cbrt"><br>
+    title:<br>
+    <input type="text" name="title"><br>
+    description:<br>
+    <input type="text" name="description"><br>
+    <input type="submit" name="Submit">
+  </formmethod="post">
+</body>
+</html>

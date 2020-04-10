@@ -2,24 +2,51 @@ from django.db import models
 from api.fields import JSONField
 
 # Create your models here.
-class Category(models.Model): 
+class Campaign(models.Model):
+    campaign_id = models.TextField()
+    url = models.TextField()
+    auto_fb_post_mode = models.TextField()
+    collected_date = models.TextField()
+    category_id = models.TextField()
+    category = models.TextField()
+    currencycode = models.TextField()
+    current_amount = models.TextField()
+    goal = models.TextField()
+    donators = models.TextField()
+    days_active = models.TextField()
+    days_created = models.TextField()
     title = models.TextField()
-
-class Product(models.Model):
-    category = models.ForeignKey(Category, on_delete=models.PROTECT)
-    filename = models.TextField()
-    name = models.TextField()
     description = models.TextField()
-    price = models.DecimalField(max_digits=10, decimal_places=2)
-
-class Sale(models.Model): 
-    name = models.TextField()
-    address1 = models.TextField()
-    address2 = models.TextField(null=True, blank=True)
-    city = models.TextField()
+    default_url = models.TextField()
+    has_beneficiary = models.TextField()
+    media_type = models.TextField()
+    project_type = models.TextField()
+    turn_off_donations = models.TextField()
+    user_id = models.TextField()
+    user_first_name = models.TextField()
+    user_last_name = models.TextField()
+    user_facebook_id = models.TextField()
+    user_profile_url = models.TextField()
+    visible_in_search = models.TextField()
+    status = models.TextField()
+    deactivated = models.TextField()
     state = models.TextField()
-    zipcode = models.TextField()
-    total = models.DecimalField(max_digits=10, decimal_places=2)
-    items = JSONField
-    payment_intent = JSONField
+    is_launched = models.TextField()
+    campaign_image_url = models.TextField()
+    created_at = models.TextField()
+    launch_date = models.TextField()
+    campaign_hearts = models.TextField()
+    social_share_total = models.TextField()
+    social_share_last_update = models.TextField()
+    location_city = models.TextField()
+    location_country = models.TextField()
+    location_zip = models.TextField()
+    is_charity = models.TextField()
+    charity_valid = models.TextField()
+    charity_npo_id = models.TextField()
+    charity_name = models.TextField()
+    velocity = models.TextField()
+    average_amount = models.TextField()
+    quality = models.TextField()
+
 

@@ -20,9 +20,6 @@ router.register(r'users', UserViewSet)
 urlpatterns = [ 
     url(r'^', include(router.urls)), 
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    path('category/', views.CategoryList.as_view()),
-    path('category/<int:pk>/', views.CategoryDetail.as_view()),
-    path('product/', views.ProductList.as_view()),
-    path('product/<int:pk>/', views.ProductDetail.as_view()),
-    path('sale/', views.CreateSale.as_view())
+    path('campaign/', views.CampaignList.as_view()),
+    path('campaign/<int:pk>/', views.CampaignDetail.as_view()),
     ]

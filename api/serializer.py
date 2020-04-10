@@ -1,21 +1,19 @@
 from rest_framework import serializers
 
-from api.models import Category, Product, Sale
+from api.models import Campaign
 
 # Serializers define the API representation
-class CategorySerializer(serializers.ModelSerializer):
+class CampaignSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Category
-        fields = ['id', 'title']
-
-class ProductSerializer(serializers.ModelSerializer):
-    category = CategorySerializer()
-
-    class Meta:
-        model = Product
-        fields = ['id', 'category', 'filename', 'name', 'description', 'price']
-
-class  SaleSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Sale
-        fields = ['name', 'address1', 'address2', 'city', 'state', 'zipcode', 'total', 'items', 'payment_intent']
+        model = Campaign
+        fields = ['campaign_id', 'url', 'auto_fb_post_mode', 'collected_date', 
+        'category_id', 'category', 'currencycode', 'current_amount', 'goal', 
+        'donators', 'days_active', 'days_created', 
+        'title', 'description', 'default_url', 'has_beneficiary', 
+        'media_type', 'project_type', 'turn_off_donations', 'user_id', 
+        'user_first_name', 'user_last_name', 'user_facebook_id', 
+        'user_profile_url', 'visible_in_search', 'status', 'deactivated', 
+        'state', 'is_launched', 'campaign_image_url', 'created_at', 
+        'launch_date', 'campaign_hearts', 'social_share_total', 'social_share_last_update', 
+        'location_city', 'location_country', 'location_zip', 'is_charity', 'charity_valid', 
+        'charity_npo_id', 'charity_name', 'velocity', 'average_amount', 'quality']

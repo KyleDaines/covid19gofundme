@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+          *, *:before, *:after {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: 'Nunito', sans-serif;
+        color: #384047;
+        font-size: 17px;
+      }
+      form {
+        max-width: 300px;
+        margin: 10px auto;
+        padding: 10px 20px;
+        background: #f4f7f8;
+        border-radius: 8px;
+      }
+      h1 {
+        margin: 0 0 30px 0;
+        text-align: center;
+        font-size: 50px;
+      }
+      input[type="text"],
+      input[type="password"],
+      input[type="date"],
+      input[type="datetime"],
+      input[type="email"],
+      input[type="number"],
+      input[type="search"],
+      input[type="tel"],
+      input[type="time"],
+      input[type="url"],
+      textarea,
+      select {
+        background: rgba(255,255,255,0.1);
+        border: none;
+        font-size: 16px;
+        height: auto;
+        margin: 0;
+        outline: 0;
+        padding: 15px;
+        width: 100%;
+        background-color: #e8eeef;
+        color: #8a97a0;
+        box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+        margin-bottom: 30px;
+      }
+      input[type="radio"],
+      input[type="checkbox"] {
+        margin: 0 4px 8px 0;
+      }
+      select {
+        padding: 6px;
+        height: 32px;
+        border-radius: 2px;
+      }
+      button {
+        padding: 19px 39px 18px 39px;
+        color: #FFF;
+        background-color: #4bc970;
+        font-size: 18px;
+        text-align: center;
+        font-style: normal;
+        border-radius: 5px;
+        width: 100%;
+        border: 1px solid #3ac162;
+        border-width: 1px 1px 3px;
+        box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+        margin-bottom: 10px;
+      }
+      fieldset {
+        margin-bottom: 30px;
+        border: none;
+      }
+      legend {
+        font-size: 1.4em;
+        margin-bottom: 10px;
+      }
+      label {
+        display: block;
+        margin-bottom: 8px;
+      }
+      label.light {
+        font-weight: 300;
+        display: inline;
+      }
+      .number {
+        background-color: #5fcf80;
+        color: #fff;
+        height: 30px;
+        width: 30px;
+        display: inline-block;
+        font-size: 0.8em;
+        margin-right: 4px;
+        line-height: 30px;
+        text-align: center;
+        text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+        border-radius: 100%;
+      }
+      input[type=button], input[type=submit], input[type=reset] {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      @media screen and (min-width: 480px) {
+        form {
+          max-width: 480px;
+        }
+      }
+  </style>
+  
+</head>
+<body>
+<h1>Campaign Success Calculator</h1>
+<!-- action should be the url path to the view that renders the template displaying the results -->
+<form action="/results/" method="POST" >
+{% csrf_token %}
+    <label>Auto post to Facebook?    <input type="checkbox" name="auto_fb_post_mode"></label>
+    <label>Category</label>
+    <select name="category_id">
+      <option value="2">Accidents & Emergencies</option>
+      <option value="3">Animals & Pets</option>
+      <option value="4">Babies, Kids & Family</option>
+      <option value="5">Business & Entrepreneurs</option>
+      <option value="6">Celebrations & Events</option>
+      <option value="7">Community & Neighbors</option>
+      <option value="8">Creative Arts, Music & Film</option>
+      <option value="9">Funerals & Memorials</option>
+      <option value="10">Travel & Adventure</option>
+      <option value="11">Medical, Illness & Healing</option>
+      <option value="12">Missions, Faith & Church</option>
+      <option value="13">Non-Profits & Charities</option>
+      <option value="14">Weddings & Honeymoons</option>
+      <option value="15">Other</option>
+      <option value="16">Sports, Teams & Clubs</option>
+      <option value="17">Education & Learning</option>
+      <option value="18">Volunteer & Service</option>
+      <option value="19">Competitions & Pageants</option>
+      <option value="20">Dreams, Hopes & Wishes</option>
+    </select>
+    <label>Campaign has beneficiary?    <input type="checkbox" name="has_beneficiary"></label>
+    <label>Campaign visible in search?    <input type="checkbox" name="visible_in_search"></label>
+    <label>Launch Date: (xx-xx-xxxx)</label>
+    <input type="text" name="launch_date">
+    <label>Country: (country code)</label>
+    <input type="text" name="location_country">
+    <label>Zipcode: (5 digits)</label>
+    <input type="text" name="location_zip">
+    <label>Is campaign a charity?    <input type="checkbox" name="is_charity"></label>
+    <label>Charity has npo ID?    <input type="checkbox" name="charity_valid"></label>
+    <label>Goal: (in dollars)</label>
+    <input type="text" name="goal_cbrt">
+    <label>Title:</label>
+    <input type="text" name="title">
+    <label>Description:</label>
+    <input type="text" name="description">
+    <div style="text-align: center">
+    <input type="submit" name="Submit">
+    </div>
+  </formmethod="post">
+</body>
+</html>
