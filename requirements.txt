@@ -1,7 +1,7 @@
 Django==3.0.3
 django-cors-headers==3.2.1
 django-extensions==2.2.7
-djangorestframework==3.11.0
+djangorestframework==3.11.2
 ptpython==2.0.4
 requests==2.21.0
 stripe==2.43.0
